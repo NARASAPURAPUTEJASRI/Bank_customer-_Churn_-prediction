@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Customer Churn Prediction</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(227, 235, 237);
+        }
+        header {
+            background-color: rgb(8, 8, 9);
+            display: flex;
+            justify-content: space-evenly;
+            padding: 20px 0;
+            height: 3rem;
+            color: rgba(246, 242, 242, 0.79);
+        }
+        nav {
+            width:  39;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-evenly;
+            padding-bottom: 30px;
+        }
+        nav ul li a {
+            font-size: 1.1rem;
+            padding: 2rem;
+            text-decoration: none;
+            color: white;
+            padding-bottom: 30px;
+        }
+        nav ul li a:hover {
+            background-color: #0dac30;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .prediction-form {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        /* Style the Predict button */
+        button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        /* Add some hover effect to the Predict button */
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+    <header>
+        <div class="logo"><h1>Bank Customer Churn Prediction</h1></div>
+    </header>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/prediction">Prediction</a></li>
+                <li><a href="/aboutus">About us</a></li>
+                <li><a href="/contactus">Contact us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="prediction-form">
+            <h2>Predict Churn</h2>
+            <form method="POST" action="/prediction">
+                
+                <label for="CreditScore">Credit Score</label>
+                <input type="text" name="CreditScore" id="CreditScore" required>
+                <label for="Tenure">Tenure</label>
+                <input type="text" name="Tenure" id="Tenure" required>
+                <label for="HasCrCard">HasCrCard</label>
+                <input type="text" name="HasCrCard" id="HasCrCard" required>
+                <label for="IsActiveMember">IsActiveMember</label>
+                <input type="text" name="IsActiveMember" id="IsActiveMember" required>
+                <button type="submit">Predict</button>
+            </form>
+            
+        </div>
+    </section>
+</body>
+</html>
